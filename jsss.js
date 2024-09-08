@@ -137,6 +137,7 @@ function returnFixText(txt) {
         }
         else {
             x = false;
+            i = txt.length;
         }
     }
     if (x) {
@@ -146,4 +147,6 @@ function returnFixText(txt) {
         console.log(txt.trim());
     }
 }
-returnFixText("bskfdmbldsmbsab d jd d jndakj a j kjdkjdfikdfdsf")
+returnFixText("bskfdmbldsmbsab d jd d jndakj a j kjdkjdfikdfdsf      ")
+
+
