@@ -117,7 +117,7 @@ function avg(arrey) {
 // multiplicationTable(55)
 
 
-//6
+// 6
 // function printReverseNumber(num) {
 //     let result = num.toString().split('').reverse().join('');
 //     console.log(result);
@@ -125,28 +125,49 @@ function avg(arrey) {
 // printReverseNumber(123456789)
 
 
-//7
-function returnFixText(txt) {
-    if (!txt) {
-        return console.log(txt);
-    }
-    let x = true;
-    for (let i = 0; i < txt.length; i++) {
-        if (txt[i] == " ") {
-            x = true
-        }
-        else {
-            x = false;
-            i = txt.length;
-        }
-    }
-    if (x) {
-        return console.log(" ");
-    }
-    else {
-        console.log(txt.trim());
-    }
-}
-returnFixText("bskfdmbldsmbsab d jd d jndakj a j kjdkjdfikdfdsf      ")
+// 7
+// function returnFixText(txt) {
+//     if (!txt) {
+//         return console.log(txt);
+//     }
+//     let x = true;
+//     for (let i = 0; i < txt.length; i++) {
+//         if (txt[i] == " ") {
+//             x = true
+//         }
+//         else {
+//             x = false;
+//             i = txt.length;
+//         }
+//     }
+//     if (x) {
+//         return console.log(" ");
+//     }
+//     else {
+//         console.log(txt.trim());
+//     }
+// }
+// returnFixText("bskfdmbldsmbsab d jd d jndakj a j kjdkjdfikdfdsf      ")
+
+
+//8
+// const list1 = [1,2,3,4]
+// const list2 = [5,6,7,8]
+// function multiplyList(list1, list2){
+//     let sum1 = 0;
+//     let sum2 = 0;
+//     let toPrint = [];
+//     for (let i = 0; i < list1.length; i++) {
+//         sum1 += list1[i];
+//         sum2 += list2[i];
+//     }
+//     for (let i = 0; i < list1.length; i++) {
+//         sum1 -= list1[i];
+//         toPrint.push(sum1 * sum2) 
+//     }
+//     console.log(toPrint);
+// }
+// multiplyList(list1, list2)
+
 
 
