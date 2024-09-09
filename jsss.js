@@ -1,29 +1,29 @@
 // let arrey = [1,2.2,1,5,55,6,66,8,88]
 // console.log("rjgdsbgdsed");
 
-function plus(arrey) {
-  let sum = 0;
-  for (let i = 0; i < arrey.length; i++) {
-    sum += arrey[i];
-  }
-  return sum;
-}
+// function plus(arrey) {
+//   let sum = 0;
+//   for (let i = 0; i < arrey.length; i++) {
+//     sum += arrey[i];
+//   }
+//   return sum;
+// }
 
-function muliply(arrey) {
-  let sum = 1;
-  for (let i = 0; i < arrey.length; i++) {
-    sum *= arrey[i];
-  }
-  return sum;
-}
+// function muliply(arrey) {
+//   let sum = 1;
+//   for (let i = 0; i < arrey.length; i++) {
+//     sum *= arrey[i];
+//   }
+//   return sum;
+// }
 
-function avg(arrey) {
-  let sum = 1;
-  for (let i = 0; i < arrey.length; i++) {
-    sum += arrey[i];
-  }
-  return sum / arrey.length;
-}
+// function avg(arrey) {
+//   let sum = 1;
+//   for (let i = 0; i < arrey.length; i++) {
+//     sum += arrey[i];
+//   }
+//   return sum / arrey.length;
+// }
 
 // function muliply(arrey) {
 //     let sum = 1;
@@ -158,16 +158,179 @@ function avg(arrey) {
 //     let sum2 = 0;
 //     let toPrint = [];
 //     for (let i = 0; i < list1.length; i++) {
-//         sum1 += list1[i];
-//         sum2 += list2[i];
-//     }
-//     for (let i = 0; i < list1.length; i++) {
-//         sum1 -= list1[i];
-//         toPrint.push(sum1 * sum2) 
-//     }
-//     console.log(toPrint);
-// }
-// multiplyList(list1, list2)
+    //         sum1 += list1[i];
+    //         sum2 += list2[i];
+    //     }
+    //     for (let i = 0; i < list1.length; i++) {
+        //         sum1 -= list1[i];
+        //         toPrint.push(sum1 * sum2) 
+        //     }
+        //     console.log(toPrint);
+        // }
+        // multiplyList(list1, list2)
 
 
 
+
+let container = document.querySelector("#container")
+        
+//1
+let quastion1 = document.querySelector("#quastion-1");
+
+quastion1.addEventListener("mouseover", changeTxtIn);
+
+function changeTxtIn() {
+    document.getElementById("quastion-1").innerHTML = "Mouse in";
+}
+
+quastion1.addEventListener("mouseout", changeTxtOut);
+
+function changeTxtOut() {
+    document.getElementById("quastion-1").innerHTML = "Mouse Out";
+}
+
+quastion1.addEventListener("click", changeColor);
+
+function changeColor() {
+    document.getElementById("quastion-1").style.color = "red";
+}
+
+quastion1.addEventListener("click", changeBackColor);
+
+function changeBackColor() {
+    document.getElementById("quastion-1").style.background = "green";
+}
+
+quastion1.addEventListener("click", addUnderScore);
+
+function addUnderScore() {
+    document.getElementById("quastion-1").style.textDecoration = "underline overline";
+}
+
+quastion1.addEventListener("dblclick", changeColorToBlack);
+
+function changeColorToBlack() {
+    document.getElementById("quastion-1").style.color = "black";
+}
+
+
+//2
+let myDiv = document.createElement("div");
+myDiv.innerHTML = "This is a new div element";
+myDiv.style.height = '50px'
+myDiv.style.width = '500px'
+myDiv.style.background = "red"
+container.appendChild(myDiv)
+
+
+let select = document.querySelector("#selectColor");
+const colors = ["red", "green", "blue"]; 
+function seedOption() {
+    for (let i = 0; i < colors.length; i++) {
+        
+        let option = document.createElement("option");
+        option.value = colors[i];
+        option.text = colors[i]; 
+        option.id = "optionColorChoise";
+        select.add(option, colors.length - 1);
+    }
+}
+seedOption()
+
+
+
+function ColorChoise() {
+    let select = document.querySelector("#selectColor");
+            myDiv.style.background = select.value    
+    }
+
+
+let button1 = document.createElement("button");
+
+
+button1.addEventListener("click", HideOrShowDiv)
+button1.innerHTML = "Hidden Div"
+container.appendChild(button1)
+function HideOrShowDiv() {
+    if (myDiv.style.visibility === 'visible') {
+        myDiv.style.visibility = 'hidden'
+        button1.innerHTML = "Show"
+    }
+    else {
+        myDiv.style.visibility = 'visible'
+        button1.innerHTML = "Hidden Div"
+    }
+}
+
+let inputColor = document.createElement("input");
+inputColor.type = 'text';
+inputColor.placeholder = "Put color here, exm: Red"
+
+let inputSubmit = document.createElement("input");
+inputSubmit.innerHTML = "Submit"
+inputSubmit.type = 'submit';
+
+container.appendChild(inputColor)
+container.appendChild(inputSubmit)
+
+inputSubmit.addEventListener("click", addColorToSelect);
+
+function addColorToSelect() {
+    colors.push(inputColor.value)
+    createOption(inputColor)
+    inputColor.value = "";
+}
+
+function createOption(inputColor) {
+    let option = document.createElement("option");
+    option.value = inputColor.value;
+    option.innerText = inputColor.value; 
+    option.id = "optionColorChoise";
+    console.log(inputColor.value);
+    select.add(option, colors.length - 1);
+}
+
+
+
+
+
+let textDiv = document.createElement("div");
+textDiv.style.background = "green"
+textDiv.style.height ='200px'
+textDiv.style.width ='200px'
+textDiv.style.display = 'flex'
+
+
+
+let txt = document.createElement("h3");
+txt.innerHTML = "Striken";
+txt.style.margin = 0;
+
+let btnMove = document.createElement("button");
+btnMove.innerHTML = "<|>"
+
+btnMove.addEventListener("click", moveTheStriken);
+
+let x;
+let y;
+const cssList = ['flex-start', 'center', 'flex-end'];
+
+function moveTheStriken() {
+    textDiv.style.alignItems = cssList[x];
+    textDiv.style.justifyContent = cssList[y];
+    x = Math.floor(Math.random() * cssList.length);
+    y = Math.floor(Math.random() * cssList.length);
+
+}
+
+container.appendChild(textDiv)
+textDiv.appendChild(txt)
+container.appendChild(btnMove)
+
+
+
+
+
+
+
+ 
